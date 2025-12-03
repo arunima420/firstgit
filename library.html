@@ -1,0 +1,39 @@
+<script>
+  class library{
+          constructor(isbn,title,author){
+                    
+                      this.isbn=isbn;
+                      this.title=title;
+                      this.author=author;
+                      this.books=[];
+                     }
+           add_book(book){
+                          this.books.push(book);
+                          alert("Book added successfully");
+                         }
+           remove_book(isbn){
+                             this.books=this.books.filter(b=>b.isbn != isbn);
+                             alert("Book removed successfully");
+                            }
+           find_book(title){
+                             return this.books=this.books.filter(b=>b.title === title);
+
+                            }
+           display_book(){
+                          this.books.forEach(b=>{document.write("title of the book is: " +b.title +"<br> ISBN of the book is : "+b.isbn +"<br> ");});
+                          }
+                }
+let title = prompt("enter the title of the book:");
+let books = prompt("enter the name of the book:");
+let author = prompt("enter the author of the book:");
+let isbn  = prompt("enter the ISBN number of the book: ");
+let library_obj=new library(isbn,title,author,books);
+library_obj.add_book(books);
+library_obj.remove_book(isbn);
+library_obj.find_book(title);
+
+
+
+
+
+</script>

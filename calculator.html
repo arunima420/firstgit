@@ -1,0 +1,44 @@
+<script>
+class calculator{
+              constructor(a,b){
+                         this.first_number=a;
+                         this.second_number=b;
+              }
+}
+class operations extends calculator{
+               constructor(a,b){
+                  super(a,b);
+               }
+               op(c){
+                   switch(c){
+                           case 1:
+                                 alert(this.first_number+"+"+this.second_number+"="+(this.first_number+this.second_number));
+                                 break;
+                           case 2:
+                                 alert(this.first_number+"-"+this.second_number+"="+(this.first_number-this.second_number));
+                                 break;
+                           case 3:
+                                 alert(this.first_number+"*"+this.second_number+"="+(this.first_number*this.second_number));
+                                 break;
+                           case 4:
+                                 alert(this.first_number+"/"+this.second_number+"="+(this.first_number/this.second_number));
+                                 break;
+
+                   }
+               }
+}
+while(true){
+    let x=Number(prompt("Enter your choice \n 1.Addition\n2.Substraction\n3.Multiplication\n4.Division\n5.exit"));
+    if(x==5){
+         alert("exited");
+         break;
+    }else if(x>5){
+         alert("enter a valid choice");
+    }
+
+let i=Number(prompt("enter your first number: "));
+let j=Number(prompt("enter your second number: "));
+let operations_obj = new operations(i,j);
+operations_obj.op(x);
+}
+</script>
